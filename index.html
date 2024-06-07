@@ -1,1 +1,65 @@
-##
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Circle and Arrow Interaction</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .controls label, .controls button {
+            margin: 0 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .controls input[type="color"], .controls input[type="range"] {
+            margin-left: 10px;
+        }
+        canvas {
+            border: 2px solid #000;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 36px; 
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Canvas Circle and Arrow Interaction</h1>
+        <canvas id="myCanvas" width="800" height="600"></canvas>
+        <div class="controls">
+            <button id="resetButton">Reset</button>
+            <button id="startStopButton">Start/Stop</button>
+            <div>
+                <label>Circle 1 Color: <input type="color" id="color1" value="#ff0000"></label>
+                <label>Circle 2 Color: <input type="color" id="color2" value="#00ff00"></label>
+                <label>Circle 3 Color: <input type="color" id="color3" value="#0000ff"></label>
+                <label>Circle 4 Color: <input type="color" id="color4" value="#ffff00"></label>
+                <button id="changeColorButton">Change Colors</button>
+            </div>
+            <div>
+                <label>Circle Size: <input type="range" id="circleSize" min="10" max="100" value="40"></label>
+                <label>Arrow Speed: <input type="range" id="arrowSpeed" min="1" max="10" value="2"></label>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
