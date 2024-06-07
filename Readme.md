@@ -39,10 +39,11 @@ This web application demonstrates interaction with HTML5 Canvas elements using p
    - Use the start/stop button to control the animation.
 
 ## File Structure
-
-.
-├── index.html  # Main HTML file
-└── app.js      # JavaScript logic for the application
+```
+├── index.html  
+└── app.js      
+└──  readme.md
+```
 
 
 ## Code Explanation
