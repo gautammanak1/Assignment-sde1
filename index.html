@@ -16,6 +16,8 @@
         }
         .container {
             text-align: center;
+            width: 90%;
+            max-width: 900px;
         }
         .controls {
             margin-top: 20px;
@@ -32,26 +34,57 @@
             border: 2px solid #000;
             background-color: #fff;
             margin-top: 20px;
+            width: 100%;
+            height: auto;
         }
-        h1 {
-            font-size: 36px; 
+        h2 {
+            font-size: 1rem;
             margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #000;
+            text-decoration: none;
+            position: relative;
+        }
+        footer a:hover {
+            color: #0000ff;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 4rem;
+            }
+            .controls label, .controls button {
+                margin: 1 20px;
+            }
+            .controls input[type="color"], .controls input[type="range"] {
+                margin-left: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Canvas Circle and Arrow Interaction</h1>
+        <h2>Canvas Circle and Arrow Interaction</h2>
         <canvas id="myCanvas" width="800" height="600"></canvas>
         <div class="controls">
             <button id="resetButton">Reset</button>
             <button id="startStopButton">Start/Stop</button>
+            <button id="changeColorButton">Change Colors</button>
             <div>
                 <label>Circle 1 Color: <input type="color" id="color1" value="#ff0000"></label>
                 <label>Circle 2 Color: <input type="color" id="color2" value="#00ff00"></label>
                 <label>Circle 3 Color: <input type="color" id="color3" value="#0000ff"></label>
                 <label>Circle 4 Color: <input type="color" id="color4" value="#ffff00"></label>
-                <button id="changeColorButton">Change Colors</button>
             </div>
             <div>
                 <label>Circle Size: <input type="range" id="circleSize" min="10" max="100" value="40"></label>
@@ -59,6 +92,9 @@
             </div>
         </div>
     </div>
+    <footer>
+        <p>Made by <a href="https://gautammanak.vercel.app/" target="_blank">Gautam Manak👨‍💻</a></p>
+    </footer>
 
     <script src="app.js"></script>
 </body>

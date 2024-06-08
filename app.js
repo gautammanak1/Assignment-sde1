@@ -27,15 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const arrowHeadLength = 20;
         const arrowHeadWidth = 20;
 
-        // Calculate angle
         const angle = Math.atan2(targetY - arrow.y, targetX - arrow.x);
 
-        // Rotate the arrow
         ctx.save();
         ctx.translate(arrow.x, arrow.y);
         ctx.rotate(angle);
 
-        // Draw arrow shaft
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(-arrowLength, 0);
@@ -43,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.strokeStyle = '#000';
         ctx.stroke();
 
-        // Draw arrow head
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(-arrowHeadLength, -arrowHeadWidth / 2);
@@ -76,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         circle.arrow.y += Math.sin(angle) * arrowSpeed;
                     } else {
                         circle.arrow.moving = false;
-                        circle.color = 'black'; // Change color on hit
+                        circle.color = 'black';
                     }
                 }
             });
@@ -99,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('resetButton').addEventListener('click', function () {
-        circles = circles.map((circle, index) => ({
+        circles = circles.map((circle) => ({
             ...circle,
             color: circle.originalColor,
             arrow: { x: arrowGap, y: circle.y, moving: false }
@@ -139,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         arrowSpeed = e.target.value;
     });
 
-    // Save original colors
     circles.forEach(circle => circle.originalColor = circle.color);
 
     draw();
